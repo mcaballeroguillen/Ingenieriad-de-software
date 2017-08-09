@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+ <h1>TodoList</h1>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+
+
+</head>
+<body>
+    <br>
+    {% for todo in todos %}
+
+       <liv>{{todo.actividad }}</liv>
+        <td><a href="/borrar/{{todo.actividad}}">Eliminar</a></td><td><a href="/subir/{{todo.actividad}}"> Subir</a></td>
+        <td><a href="/bajar/{{todo.actividad}}"> bajar</a></td><br/>
+    {% endfor %}
+</body>
+</html>
